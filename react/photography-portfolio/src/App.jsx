@@ -39,7 +39,6 @@ const App = () => {
         ))}
       </nav>
 
-      {/* Käytetään Gallery-komponenttia kuvien näyttämiseen */}
       <Gallery images={filteredImages} />
     </div>
   );
