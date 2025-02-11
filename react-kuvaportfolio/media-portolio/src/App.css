@@ -48,15 +48,16 @@ body {
 }
 
 .app-container {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1600px;  /* Kasvatettu max-leveys */
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;      /* Pienemmät reunat */
 }
 
 /* Otsikko */
 header h1 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 20px;
 }
 

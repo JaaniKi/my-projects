@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import imagesData from './data/images';
 import Gallery from './components/gallery';
 import './App.css';
+import Header from './components/header';
 
 const categories = [
   { label: 'Kaikki kuvat', value: 'all' },
-  { label: 'Maisemat', value: 'maisema' },
+  { label: 'Maisemat', value: 'maisemat' },
   { label: 'Puolustusvoimat', value: 'puolustusvoimat' },
   { label: 'Henkilökuvat', value: 'henkilökuvat' },
   { label: 'Muut', value: 'muut' },
@@ -13,20 +14,17 @@ const categories = [
 
 const App = () => {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [filteredImages, setFilteredImages] = useState(imagesData);
 
-  useEffect(() => {
-    if (activeCategory === 'all') {
-      setFilteredImages(imagesData);
-    } else {
-      setFilteredImages(imagesData.filter((img) => img.category === activeCategory));
-    }
+  const filteredImages = useMemo(() => {
+    return activeCategory === 'all'
+      ? imagesData
+      : imagesData.filter((img) => img.category === activeCategory);
   }, [activeCategory]);
 
   return (
     <div className="app-container">
       <header>
-        <h1>Media Portfolio</h1>
+        <Header/>
       </header>
 
       <nav className="filter-tabs">
