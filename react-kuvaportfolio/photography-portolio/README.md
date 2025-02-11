@@ -1,3 +1,9 @@
+To run the project:
+- go to /react-kuvaportfolio/photography-portfolio
+- run command: npm install
+- run command: npm start
+    
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
